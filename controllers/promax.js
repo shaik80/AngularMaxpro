@@ -11,8 +11,6 @@ let itemSelection = []; // to store array of item to be selected
 let quantitySelection = []; // to store array of qty to be selected
 let answer = [];
 
-router.get('/', ensureAuthenticated, (req, res) => res.render('./employee/maxprofit'))
-
 router.post('/',  (req, res) => {
     let arr = req.body.items.split(",");
     let arr1 = req.body.profit.split(",");
@@ -42,9 +40,10 @@ router.post('/',  (req, res) => {
             let ans = maxprofit(profit, profit.mybudget, profit.mydemand)
 
             console.log("result", ans)
-            res.render('./employee/maxprofit', {
+            res.json({
                 result: ans
-            });
+            })
+                
         })
         .catch(err => console.log(err));
 });

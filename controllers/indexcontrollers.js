@@ -14,7 +14,7 @@ router.get('/', (req, res) => res.render('welcome'))
 router.get('/dashboard', ensureAuthenticated,(res, req) => req.render('./employee/index'))
 
 
-router.get('/login', (req, res) => res.render('./general/login'));
+// router.get('/login', (req, res) => res.render('./general/login'));
 router.get('/register', (req, res) => res.render('./general/register'));
 router.get('/dashboard', (req, res) => res.render('./general/dashboard'));
 router.get('/404', (req, res) => res.render('./general/404'));
